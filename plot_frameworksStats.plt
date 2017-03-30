@@ -28,7 +28,7 @@ do  for [i=1:numFrameworks] {
 
 	set yrange [0.5:1.5]
 	set boxwidth 1
-	set xrange [1:COL_records]
+	set xrange [1:allocationCycles]
 	set output 'allocationRunReceived_framework-'.i.'.eps'
 		plot '../OUTPUT/framework-'.i.'.dat' using 1:(1)  with boxes fs solid 1 title "allocation run received"
 }
