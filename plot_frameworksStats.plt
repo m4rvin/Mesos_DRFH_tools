@@ -31,17 +31,17 @@ do  for [i=1:numFrameworks] {
 	set output './'.path.'/meanTasksQueueWaitingTime_framework-'.i.'.eps'
 	plot  './'.path.'/framework-'.i.'.dat' using 1:14 with linespoints title "mean tasks queue waiting time"
 
-	set output './'.path.'/cpusReceived_framework-'.i.'.eps'
-	plot  './'.path.'/framework-'.i.'.dat' using 1:15 with linespoints title "cpus received"
+	set output './'.path.'/cpusReceived_VS_Unused_framework-'.i.'.eps'
+	plot  './'.path.'/framework-'.i.'.dat' using 1:15 with linespoints title "cpus received", './'.path.'/framework-'.i.'.dat' using 1:19 with linespoints title "cpus unused"
 	
-	set output './'.path.'/totalCpusReceived_framework-'.i.'.eps'
-	plot  './'.path.'/framework-'.i.'.dat' using 1:17 with linespoints title "total cpus received"
+	set output './'.path.'/totalCpusReceived_VS_Unused_framework-'.i.'.eps'
+	plot  './'.path.'/framework-'.i.'.dat' using 1:17 with linespoints title "total cpus received", './'.path.'/framework-'.i.'.dat' using 1:21 with linespoints title "total cpus unused"
 
-	set output './'.path.'/memReceived_framework-'.i.'.eps'
-	plot  './'.path.'/framework-'.i.'.dat' using 1:16 with linespoints title "mem received"
+	set output './'.path.'/memReceived_VS_Unused_framework-'.i.'.eps'
+	plot  './'.path.'/framework-'.i.'.dat' using 1:16 with linespoints title "mem received", './'.path.'/framework-'.i.'.dat' using 1:20 with linespoints title "mem unused"
 
-	set output './'.path.'/totalMemReceived_framework-'.i.'.eps'
-	plot  './'.path.'/framework-'.i.'.dat' using 1:18 with linespoints title "total mem received"
+	set output './'.path.'/totalMemReceived_VS_Unused_framework-'.i.'.eps'
+	plot  './'.path.'/framework-'.i.'.dat' using 1:18 with linespoints title "total mem received", './'.path.'/framework-'.i.'.dat' using 1:22 with linespoints title "total mem unused"
 
 	set yrange [0.5:1.5]
 	set boxwidth 1
