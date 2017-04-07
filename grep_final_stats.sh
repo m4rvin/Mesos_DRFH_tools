@@ -21,7 +21,7 @@ i=1
 while [ $i -le $numFrameworks ]; do
 	echo ">>Stats for framework-$i.dat"
 	#IFS=' '  read -r ARN RO OA OD OU TOD TOA TOU TOR  TL TNL TTL TTNL  < <(tail -n1 "$folder/framework-$i.dat") && echo "- allocationRunNumber = $ARN" && echo "- totalOffersDeclined = $TOD" && echo "- totalOffersAccepted = $TOA" && echo "- totalOffersUnused = $TOU" && echo "- totalOffersReceived = $TOR"
-	IFS=' '  read -r ARN RO OA OD OU TOD TOA TOU TOR  TL TNL TTL TTNL  < <(tail -n1 "$folder/framework-$i.dat") && echo "- totalOffersDeclined = $TOD" && echo "- totalOffersAccepted = $TOA" && echo "- totalOffersUnused = $TOU" && echo "- totalOffersReceived = $TOR"
+	IFS=' '  read -r ARN RO OA OD OU TOD TOA TOU TOR  TL TNL TTL TTNL TMTWT  < <(tail -n1 "$folder/framework-$i.dat") && echo "- totalOffersDeclined = $TOD" && echo "- totalOffersAccepted = $TOA" && echo "- totalOffersUnused = $TOU" && echo "- totalOffersReceived = $TOR" && echo "- totalTasksLaunched = $TTL" && echo "- totalMeanTaskWaitingTime = $TMTWT"
 	let i=i+1	
 	echo
 done
