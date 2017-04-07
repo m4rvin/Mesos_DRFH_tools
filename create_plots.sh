@@ -1,26 +1,29 @@
 #!/bin/bash
 
-if [ "$#" -lt 2 ]; then
-  	echo ">>> WARNING: You must specify the number of frameworks' files to read and the seconds the simulation has run."
+if [ "$#" -lt 3 ]; then
+  	echo ">>> WARNING: You must specify the number of frameworks' files to read, the seconds the simulation has run, and the allocation interval (in seconds)."
 	exit
 fi
 
-if [ "$#" -gt 3 ]; then
+if [ "$#" -gt 4 ]; then
 	echo ">>> ERROR: too many arguments"
 	exit
 fi
 
-if [ "$#" -ne 3 ]; then
+if [ "$#" -ne 4 ]; then
 	echo ">>> INFO: using ../OUTPUT/ as path for .dat files."
 	FILES_PATH="../OUTPUT/"
 else 
-	FILES_PATH=$3
+	FILES_PATH=$4
 fi
+z=$(($2/$3))
+ALLOCATION_CYCLES=$z
+echo ">>> INFO: allocation cycle considered is $ALLOCATION_CYCLES"
 
 gnuplot -e "path='$FILES_PATH'" plot_clusterStats.plt 
 
 gnuplot -e "path='$FILES_PATH'" plot_clusterPoolStats.plt
 
-gnuplot -e "numFrameworks=$1" -e "allocationCycles=$2" -e "path='$FILES_PATH'" plot_frameworksStats.plt 
+gnuplot -e "numFrameworks=$1" -e "allocationCycles=$ALLOCATION_CYCLES" -e "path='$FILES_PATH'" plot_frameworksStats.plt 
 
 
