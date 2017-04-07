@@ -28,6 +28,9 @@ do  for [i=1:numFrameworks] {
 	set output './'.path.'/totalTasksLaunched_framework-'.i.'.eps'
 	plot  './'.path.'/framework-'.i.'.dat' using 1:12 with linespoints title "total launched-tasks"
 
+	set output './'.path.'/meanTasksQueueWaitingTime_framework-'.i.'.eps'
+	plot  './'.path.'/framework-'.i.'.dat' using 1:14 with linespoints title "mean tasks queue waiting time"
+
 	set output './'.path.'/cpusReceived_framework-'.i.'.eps'
 	plot  './'.path.'/framework-'.i.'.dat' using 1:15 with linespoints title "cpus received"
 	
