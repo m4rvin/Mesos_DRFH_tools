@@ -31,8 +31,15 @@ do  for [i=1:numFrameworks] {
 	set output './'.path.'/meanTasksQueueWaitingTime_framework-'.i.'.eps'
 	plot  './'.path.'/framework-'.i.'.dat' using 1:14 with linespoints title "mean tasks queue waiting time"
 
+	set xlabel "allocation cycle"
+	set ylabel "cpus"
+
 	set output './'.path.'/cpusReceived_VS_Unused_framework-'.i.'.eps'
-	plot  './'.path.'/framework-'.i.'.dat' using 1:15 with linespoints title "cpus received", './'.path.'/framework-'.i.'.dat' using 1:19 with linespoints title "cpus unused"
+	plot  './'.path.'/framework-'.i.'.dat' using 1:15 with linespoints title "mean cpus received", './'.path.'/framework-'.i.'.dat' using 1:19 with linespoints title "mean cpus unused"
+
+	reset
+	set autoscale
+	set xrange [1:]
 	
 	set output './'.path.'/totalCpusReceived_VS_Unused_framework-'.i.'.eps'
 	plot  './'.path.'/framework-'.i.'.dat' using 1:17 with linespoints title "total cpus received", './'.path.'/framework-'.i.'.dat' using 1:21 with linespoints title "total cpus unused"
