@@ -1,0 +1,5 @@
+Frameworktypes	random	balancedServer	maxAvailableServer	maxServer-like	first-fit	best-fit-DRFH	best-fit-simple
+framework-low	0.1	0.1	0.1	0.1	0.1	0.1	0.1
+framework-common	5.57	5.15	6.59	10.01	5.15	4.14	0.86
+framework-memint	8.16	7.28	10.88	8.16	6.73	8.06	0.82
+framework-cpuint	11.71	8.52	19.69	25.97	10.71	10.76	0.63
